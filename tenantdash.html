@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KejaHub - Tenant Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body class="bg-[#EAEAEA] font-sans min-h-screen flex flex-col antialiased">
+
+    <header class="bg-white border-b border-gray-100 px-6 py-3 flex justify-between items-center w-full shrink-0">
+        <div class="flex items-center gap-2 text-black font-bold text-xl">
+            <div class="text-xl text-blue-600 flex items-center">
+                <i class="fa-solid fa-house-chimney text-cyan-600"></i>
+            </div>
+            <span class="tracking-tight">Keja<span class="text-cyan-500">Hub</span></span>
+        </div>
+        
+        <div class="flex items-center gap-6 text-gray-700 text-sm font-medium">
+            <button class="hover:text-black transition">
+                <i class="fa-regular fa-user text-xl"></i>
+            </button>
+            <button class="hover:text-black transition">
+                <i class="fa-regular fa-bell text-xl"></i>
+            </button>
+            <div class="flex items-center gap-1 cursor-pointer hover:text-black transition">
+                <span>Help</span>
+                <i class="fa-solid fa-caret-down text-xs"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex flex-1 w-full">
+        
+        
+        <aside class="w-16 bg-white border-r border-gray-200 flex flex-col items-center py-6 gap-8 shrink-0">
+            <button class="text-gray-800 hover:text-black transition text-xl">
+                <i class="fa-solid fa-house"></i>
+            </button>
+            <button class="text-gray-400 hover:text-black transition text-xl">
+                <i class="fa-solid fa-gear"></i>
+            </button>
+            <button class="text-gray-400 hover:text-black transition text-xl">
+                <i class="fa-solid fa-calendar-days"></i>
+            </button>
+            <button class="text-gray-400 hover:text-black transition text-xl">
+                <i class="fa-solid fa-users"></i>
+            </button>
+        </aside>
+
+        
+        <main class="flex-1 bg-white p-6 overflow-x-hidden">
+            
+
+            <div class="bg-[#D9D9D9] text-black px-6 py-3 flex flex-col justify-center w-full mb-6">
+                <h2 class="text-lg font-bold leading-tight">Welcome Back Alex!</h2>
+                <div class="text-xs uppercase tracking-wider text-gray-700 font-semibold mt-0.5">Tenant Dashboard</div>
+                <div class="text-xs font-bold text-gray-700">Unit C5</div>
+            </div>
+
+                <- MAIN DASH AREA --   >
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start max-w-6xl">
+                
+              <div class="space-y-6">
+                    <div class="border border-red-400 p-4 bg-white rounded-none">
+                        <div class="w-full h-48 relative">
+                            <canvas id="rentPaymentChart"></canvas>
+                        </div> 
+                    </div>
+
+
+                    <div class="bg-[#EDEDED] p-4 space-y-3 text-xs font-bold text-black border border-gray-200">
+                        <div class="flex items-center gap-3">
+                            <input type="checkbox" checked class="w-4 h-4 text-blue-600 rounded" />
+                            <span>Rent Payment : Ksh 17,000 July 2nd, 2026</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-bell text-sm text-black"></i>
+                            <span>Next Rent Payment Due: 2nd August, 2026</span>
+                        </div>
+                        <div class="flex items-center gap-3 cursor-pointer hover:underline">
+                            <i class="fa-regular fa-comment text-sm text-black"></i>
+                            <span>Message Landlord</span>
+                        </div>
+                    </div>
+
+
+                    <div class="bg-[#EDEDED] p-5 border border-gray-200">
+                        <h3 class="text-center font-bold text-xs uppercase tracking-wider text-black mb-4">Utilities</h3>
+                        <div class="space-y-2 text-xs font-bold text-black border-b border-gray-300 pb-4 mb-4">
+                            <div class="flex justify-between max-w-xs">
+                                <span><i class="fa-solid fa-droplet mr-2"></i>Water Bill:</span>
+                                <span>Ksh 2,300</span>
+                            </div>
+                            <div class="flex justify-between max-w-xs">
+                                <span><i class="fa-solid fa-bolt mr-2"></i>Electric Bill:</span>
+                                <span>Ksh 700</span>
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-xs font-bold text-black">
+                            <p class="text-[10px] uppercase tracking-wider text-gray-600">Set Reminders For :</p>
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-bell"></i>
+                                <span>Water Amount: Ksh 2,300</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-bell"></i>
+                                <span>Electricity : Ksh 700</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="space-y-6">
+                    <div class="bg-[#EDEDED] p-5 border border-gray-200">
+                        <h3 class="text-center font-bold text-xs uppercase tracking-wider text-black mb-3">Recent Activity</h3>
+                        <div class="flex justify-center mb-4">
+                            <button class="bg-[#93C5FD] text-black font-bold text-xs px-4 py-2 rounded shadow-sm hover:bg-blue-400 transition">
+                                Submit Maintenance Request
+                            </button>
+                        </div>
+                        <div class="space-y-4 text-xs font-bold text-black">
+                            <div class="flex items-start gap-2">
+                                <input type="checkbox" checked class="mt-0.5 w-4 h-4 text-blue-600 rounded" />
+                                <p>Maintenance request #A1 - Resolved</p>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <input type="checkbox" checked class="mt-0.5 w-4 h-4 text-blue-600 rounded" />
+                                <p>Rent payment Ksh 17,000<br/><span class="text-gray-600 font-medium">2nd July, 2026</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="flex flex-col items-center">
+                        <h3 class="font-bold text-xs uppercase tracking-wider text-black mb-2">Floor Plan</h3>
+                        <div class="border border-gray-300 bg-white p-2 w-full max-w-sm shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1545464693-f1798a373343?auto=format&fit=crop&w=600&q=80" alt="Apartment Architecture Layout Sketch" class="w-full h-auto grayscale object-cover" />
+                        </div>
+                    </div>
+
+                    <!-- Lease Legal Document Card Link Anchor Element -->
+                    <div class="pt-2">
+                        <p class="text-center font-bold text-xs text-gray-700 mb-2">Documents</p>
+                        <div class="bg-[#F2F2F2] hover:bg-gray-200 border border-gray-300 p-4 flex items-center justify-center gap-4 cursor-pointer transition shadow-sm max-w-md mx-auto">
+                            <i class="fa-solid fa-file-signature text-3xl text-black"></i>
+                            <div class="text-left">
+                                <p class="font-black text-sm text-black leading-tight">View Lease Terms</p>
+                                <p class="font-black text-sm text-black leading-tight">& Conditions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const ctx = document.getElementById('rentPaymentChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                    datasets: [
+                        {
+                            label: 'Rent Paid',
+                            data: [20000, 19000, 15000, 20000, 14500, 0],
+                            backgroundColor: '#1C64F2',
+                            barPercentage: 0.7,
+                            categoryPercentage: 0.6
+                        },
+                        {
+                            label: 'Rent Not Paid',
+                            data: [0, 1000, 5000, 0, 5500, 20000],
+                            backgroundColor: '#A78BFA',
+                            barPercentage: 0.7,
+                            categoryPercentage: 0.6
+                        },
+                       
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Rent Payment',
+                            font: { size: 12, weight: 'bold' },
+                            color: '#000000',
+                            padding: { bottom: 10 }
+                        },
+                        legend: {
+                            position: 'bottom',
+                            labels: { boxWidth: 10, font: { size: 9 }, color: '#000000' }
+                        }
+                    },
+                    scales: {
+                        x: { grid: { display: false }, ticks: { font: { size: 9 }, color: '#000000' } },
+                        y: { min: 0, max: 20000, ticks: { stepSize: 1000, font: { size: 9 }, color: '#000000' } }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
