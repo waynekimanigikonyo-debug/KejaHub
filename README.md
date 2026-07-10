@@ -31,4 +31,8 @@ The layout architecture is divided into three primary interface blocks:
 2.  **Navigation Sidebar (`<aside>`):** A slim, 64px fixed-width vertical panel holding centralized controls protected against layout shrinkage.
 3.  **Core Application Grid:** A dual-column environment hosting interactive charting models side-by-side with micro-billing data modules.
 
+## Figma Designs
+https://www.figma.com/design/NQx0cSSEK6BG7FwQdrsK19/Wayne-Kimani-s-team-library?node-id=3312-102&t=87tx1iC3xefHwosk-1
 
+## Powerpoint Slides
+https://1drv.ms/p/c/e4fadb8dbd03e3e2/IQB5MyS3iPTPR4DsFPceOaAOAXbL0AZnENiP89qlrbh-a1E?e=wBeJ0U
