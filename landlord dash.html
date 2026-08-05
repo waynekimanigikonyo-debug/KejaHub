@@ -242,7 +242,7 @@
                 alert(`Tenant ${newTenant.name} successfully onboarded to Unit ${newTenant.unit}!`);
                 modal.classList.add('hidden');
                 e.target.reset();
-                await loadLandlordData(); // Refresh UI dynamically
+                await loadLandlordData(); // Refresh UI
             } catch (err) {
                 console.error("Error onboarding tenant:", err);
                 alert("Failed to onboard tenant. Check browser console for details.");

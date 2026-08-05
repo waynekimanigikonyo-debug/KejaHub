@@ -1,9 +1,7 @@
 async function loadTenantDashboard() {
     try {
-        // Fetch data from storage.js
         const data = await getKejaData();
         
-        // Ensure tenants array exists
         const tenants = data?.tenants || [];
         
         if (tenants.length === 0) {
@@ -12,19 +10,16 @@ async function loadTenantDashboard() {
             return;
         }
 
-        // Try to identify the logged-in user
         let loggedInUserId = sessionStorage.getItem('loggedInUserId') || localStorage.getItem('loggedInUserId');
         
         // Find the specific tenant (converting both to strings to ensure they match)
         let currentTenant = tenants.find(t => String(t.id) === String(loggedInUserId));
 
-        // FALLBACK: If nobody is logged in yet, just use the first tenant so the screen isn't blank
         if (!currentTenant) {
             console.warn("No specific tenant logged in. Falling back to the first tenant in the database for testing.");
             currentTenant = tenants[0]; 
         }
 
-        // Populate the UI
         populateDashboardUI(currentTenant);
         initializeChart(currentTenant);
 
@@ -33,7 +28,7 @@ async function loadTenantDashboard() {
     }
 }
 
-// --- 2. Populate DOM Elements ---
+// ---  DOM Elements ---
 function populateDashboardUI(tenant) {
     // Destructure with safe default values in case data is missing
     const { 
@@ -94,7 +89,7 @@ function populateDashboardUI(tenant) {
     }
 }
 
-// --- 3. Initialize Chart.js ---
+
 function initializeChart(tenant) {
     const ctx = document.getElementById('rentPaymentChart');
     if (!ctx) return;
@@ -112,7 +107,7 @@ function initializeChart(tenant) {
                     tenant.rentAmount, 
                     tenant.rentAmount, 
                     tenant.rentAmount, 
-                    tenant.isPaid ? tenant.rentAmount : 0 // Last month reflects current payment status
+                    tenant.isPaid ? tenant.rentAmount : 0 
                 ],
                 backgroundColor: '#93C5FD',
                 borderRadius: 4
@@ -123,7 +118,7 @@ function initializeChart(tenant) {
             maintainAspectRatio: false,
             plugins: {
                 legend: {
-                    display: false // Hides the legend to save space
+                    display: false 
                 }
             }
         }
@@ -160,8 +155,6 @@ function setupModal() {
     }
 }
 
-// --- 5. Boot Up ---
-// Wait for the HTML to fully load before running the scripts
 document.addEventListener('DOMContentLoaded', () => {
     loadTenantDashboard();
     setupModal();

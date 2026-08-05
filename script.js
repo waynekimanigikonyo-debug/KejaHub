@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- 1. Mobile Menu Toggle ---
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
 
@@ -12,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 2. Contact Form Handling ---
     const contactForm = document.getElementById('ContactUs');
     const formFeedback = document.getElementById('form-feedback');
 
@@ -30,12 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 formFeedback.classList.remove('hidden');
             }
 
-            // Clear the form fields
             contactForm.reset();
         });
     }
 
-    // --- 3. CTA Button Interactions ---
     const exploreBtn = document.getElementById('explore-btn');
     const getStartedBtn = document.getElementById('get-started-btn');
 
