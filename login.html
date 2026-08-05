@@ -78,11 +78,11 @@
 
             if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
                 storage.setItem('userRole', 'admin');
-                window.location.href = 'landlordDash.html';
+                window.location.href = 'landlord dash.html';
             } 
             else if (email === TENANT_EMAIL && password === TENANT_PASSWORD) {
                 storage.setItem('userRole', 'tenant');
-                window.location.href = 'TD.html';
+                window.location.href = 'tenantdash.html';
             } 
             else {
                 alert('Invalid email or password. Please check your credentials.');
