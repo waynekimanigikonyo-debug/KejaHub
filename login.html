@@ -1,64 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="m-0 p-0 h-full">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>KejaHub - Login</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link src="index.html">
+    <style>
+        html, body {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <div>
-        <div>
-        <nav class="flex items-center m-4 gap-4 border-b-2 border-black pb-2 ">
-            <image src="Assets/Etienne-Beauregard-Riverin-B0aCvAVSX8E-unsplash.jpg" class="h-16 w-20 rounded-full md:h-32 md:w-32  "></image>
-            <p class="text-lg md:text-3xl items-center space-x-4 text-left">KejaHub</p>
-        
-          
+<body class="bg-gray-100 min-h-screen m-0 p-0 flex flex-col">
+    <!-- Header / Navbar -->
+    <header class="w-full bg-white shadow-sm">
+        <nav class="flex items-center px-6 py-4 gap-4 border-b border-gray-300">
+            <img src="/Assets/minh-pham-OtXADkUh3-I-unsplash.jpg" alt="KejaHub Logo" class="h-14 w-14 rounded-full object-cover">
+            <p class="text-xl md:text-3xl font-bold tracking-tight text-gray-900">KejaHub</p>
         </nav>
-       
-    </div>
     </header>
-    
-    <main class="flex md:flex-cols-2 ">
 
-        <div class="container mx-auto max-w-md bg-gray-300 ">
-            <div class="m-4">
-            <h2 class="font-bold text-xl md:text-2xl tracking-wide text-center">Welcome Back!</h2>
-            <p class="font-semi text-xl md:text-2xl tracking-wide text-center">Sign in to your KejaHub account</p>
+    <!-- Main Content -->
+    <main class="flex-grow flex justify-center items-center py-8 px-4">
+        <div class="container mx-auto max-w-md bg-gray-800 rounded-xl p-6 md:p-8 shadow-xl text-white">
+            <div class="mb-6 text-center">
+                <h2 class="font-bold text-2xl md:text-3xl tracking-wide">Welcome Back!</h2>
+                <p class="text-sm md:text-base text-gray-300 mt-1">Sign in to your KejaHub account</p>
             </div>
-        
-            <div>
-                <form class="container items-center justify-center m-4 py-4 space-y-4 text-white">
-                <label for="email" class="block" class="text-md font-semi md:text-xl ">Email / Username</label>
-                <input type="email" id="email" placeholder="Enter Your Email address" class="border border-slate-200 px-6 py-4 md:w-[400px] rounded-xl">
 
-                <label for="password" class="flex justify-between items-center ">Password <span class="text-red-500 hover:underline mr-6">Forgot Password?</span></label>
-                <input type="password" id="password" placeholder="****************"class="border border-slate-200 px-6 py-4 md:w-[400px] rounded-xl items-center justify-center">
-                <button class=" block bg-red-700 px-10 py-3 justify-center items-center md:w-[300px] rounded ml-16">Login</button>
-                <checkbox class="flex  items-center space-x-4">
-                    <input type="checkbox" id="remember" class="mr-2">
-                    <label for="remember" class="text-md font-semi md:text-xl ">Keep me signed in for 30 Days</label>
-                </checkbox>
-             
-                <button class="bg-slate-600 py-3 px-6 md:w-[300px] text-black font-bold text-xl rounded ml-16 ">SIGN IN</button>
-                <p class="text-center">OR</p>
+            <form id="loginForm" class="space-y-4">
+                <div>
+                    <label for="email" class="block text-sm font-medium mb-1">Email / Username</label>
+                    <input type="email" id="email" required placeholder="Enter Your Email address" class="w-full border border-slate-600 bg-gray-700 px-4 py-3 rounded-xl focus:outline-none focus:border-red-500 text-white placeholder-gray-400">
+                </div>
 
-               <div class="flex items-center justify-center ">
-                <image src="/Assets/google.jpg" class="h-[50px]"></image>
-                <p class="border px-4 py-3 bg-white text-black border-white">Continue with google</p>
-               </div>
+                <div>
+                    <div class="flex justify-between items-center mb-1">
+                        <label for="password" class="text-sm font-medium">Password</label>
+                        <a href="#" class="text-xs text-red-400 hover:underline">Forgot Password?</a>
+                    </div>
+                    <input type="password" id="password" required placeholder="••••••••" class="w-full border border-slate-600 bg-gray-700 px-4 py-3 rounded-xl focus:outline-none focus:border-red-500 text-white placeholder-gray-400">
+                </div>
 
-               <div class="text-center mb-4">
-                <a href="" class="hover:underline text-black">Don't have an account? Create one for Free</a>
-               </div>
-                </form>
-            </div>
+                <div class="flex items-center space-x-2 pt-1">
+                    <input type="checkbox" id="remember" class="w-4 h-4 rounded text-red-600 focus:ring-red-500">
+                    <label for="remember" class="text-sm text-gray-300">Keep me signed in for 30 Days</label>
+                </div>
+
+                <button type="submit" class="w-full bg-red-700 hover:bg-red-800 text-white font-bold py-3 rounded-xl transition duration-200 mt-2 cursor-pointer">
+                    Sign In
+                </button>
+
+                <div class="text-center mt-6">
+                    <a href="register.html" class="text-sm text-gray-300 hover:underline">
+                        Don't have an account? <span class="text-red-400 font-semibold">Create one for Free</span>
+                    </a>
+                </div>
+            </form>
         </div>
-    </div>
     </main>
-    
 
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const remember = document.getElementById('remember').checked;
+            const storage = remember ? localStorage : sessionStorage;
+
+            const ADMIN_EMAIL = 'admin@kejahub.com';
+            const ADMIN_PASSWORD = 'admin123';
+
+            const TENANT_EMAIL = 'tenant@kejahub.com';
+            const TENANT_PASSWORD = 'tenant123';
+
+            if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
+                storage.setItem('userRole', 'admin');
+                window.location.href = 'landlordDash.html';
+            } 
+            else if (email === TENANT_EMAIL && password === TENANT_PASSWORD) {
+                storage.setItem('userRole', 'tenant');
+                window.location.href = 'TD.html';
+            } 
+            else {
+                alert('Invalid email or password. Please check your credentials.');
+            }
+        });
+    </script>
 </body>
 </html>
