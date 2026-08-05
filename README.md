@@ -20,6 +20,7 @@ KejaHub is a sleek, modern, and responsive property management tenant dashboard.
 | **Tailwind CSS v4** | Styling | Utility-first classes, Custom Hex color thematic mapping |
 | **Chart.js** | Data Visualization | Dynamic client-side asynchronous charting |
 | **FontAwesome v6** | Iconography | High-fidelity scalable interface elements |
+|**ECS6 (JS)      | Functionality To the pages |
 
 ---
 
