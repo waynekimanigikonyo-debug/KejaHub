@@ -26,7 +26,7 @@
                 </div>
                 <div>
                     <a href="login.html">
-                    <button class="bg-red-400 px-4 py-2 font-semi text-white rounded">LOGIN</button>
+                    <button id="loginBtn" class="bg-red-400 px-4 py-2 font-semi text-white rounded">LOGIN</button>
                     </a>
                 </div>
 
@@ -110,5 +110,11 @@
         </div>
     </div>
 </body>
+<script>
+    loginBtn = document.getElementById('loginBtn')
+    loginBtn.addEventListener('click',function(){
+        window.href.location='login.html'
+    })
+</script>
 
 </html>
